@@ -3,12 +3,14 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(sum(50, 3))
+	fmt.Println(sum(50, 3, 70, 35, 78, 743))
 }
 
-func sum(a, b int) (int, bool) {
-	if a+b >= 50 {
-		return a + b, true
+func sum(numbers ...int) int {
+	total := 0
+	for _, number := range numbers {
+		total += number
 	}
-	return a + b, false
+
+	return total
 }
