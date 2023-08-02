@@ -16,6 +16,10 @@ type Customer struct {
 	Address
 }
 
+func (c Customer) Disable() {
+	c.Active = false
+}
+
 func main() {
 	jorge := Customer{
 		Name:   "Jorge",
@@ -25,7 +29,7 @@ func main() {
 
 	fmt.Printf("Name: %s, Age: %d, Active: %t \n", jorge.Name, jorge.Age, jorge.Active)
 
-	jorge.Active = false
+	jorge.Disable()
 	jorge.City = "Santo Angelo"
 
 	fmt.Printf("Name: %s, Age: %d, Active: %t, City: %s \n", jorge.Name, jorge.Age, jorge.Active, jorge.City)
